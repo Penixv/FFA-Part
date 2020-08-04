@@ -32,6 +32,7 @@ public class FFAPlayer extends PlayerInfo {
     private int deathStreaks;
 
     private Long lastHit;
+    private Long spawnTag;
 
     private Player target;
 
@@ -41,6 +42,7 @@ public class FFAPlayer extends PlayerInfo {
         super(skyDog.getuuid(), skyDog.getName());
         this.skyDog = skyDog;
         this.lastHit = -1l;
+        this.spawnTag = -1l;
         this.damageMap = new HashMap<>();
         this.hitMap = new HashMap<>();
         this.abilityCooldown = new Cooldown(0);
@@ -96,16 +98,26 @@ public class FFAPlayer extends PlayerInfo {
         this.addDeaths();
         this.addDeathStreaks();
         if (this.toPlayer() != null && !left) {
-            this.toPlayer().spigot().respawn();
-            this.toPlayer().teleport(Tekoki.tekoki().getFfaHandler().getSpawn());
-            this.resetPlayer(this.toPlayer());
+            Player player = this.toPlayer();
+            if (this.spawnTag != -1l) {
+                this.resetSpawnTag();
+            }
+            player.spigot().respawn();
+            player.teleport(Tekoki.tekoki().getFfaHandler().getSpawn());
+            this.resetPlayer();
             this.resetKit();
-            new SelectFFAKitMenu(true).openMenu(this.toPlayer());
-            this.toPlayer().sendMessage(Color.RED + "You died!");
+            new SelectFFAKitMenu(true).openMenu(player);
+            player.sendMessage(Color.RED + "You died!");
         }
     }
 
-    private void resetPlayer(Player player) {
+    private void resetSpawnTag() {
+        this.spawnTag = -1l;
+        this.toPlayer().sendMessage(Color.RED + "Your spawn request has been canceled due to hurt.");
+    }
+
+    public void resetPlayer() {
+        Player player = this.toPlayer();
         Bukkit.getScheduler().runTaskLater(Tekoki.tekoki(),()-> {
             player.setFireTicks(0);
             player.setFoodLevel(20);

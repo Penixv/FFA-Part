@@ -183,6 +183,7 @@ public class Tekoki extends MeaProvider {
 		this.getCommand("night").setExecutor(new TimeCommand());
 		this.getCommand("settings").setExecutor(new SettingsCommand());
 		this.getCommand("ffa").setExecutor(new FFACommand());
+		this.getCommand("spawn").setExecutor(new SpawnCommand());
 		/*this.getCommand("lunarclient").setExecutor(new LunarClientCommand());
 		this.getCommand("emote").setExecutor(new EmoteCommand());*/
 	}
@@ -218,6 +219,7 @@ public class Tekoki extends MeaProvider {
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new TimePacketTask(),200l,200l);
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new BroadCastTask(), 0l, 2400l);
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new SnapShotsRemoveTask(), 2l,1200l);
+		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new FFATask(), 0l, 20l);
 		Bukkit.getServer().getScheduler().runTaskLater(this, () ->{
 			this.isloaded = true;
 		}, 80L);
@@ -244,7 +246,7 @@ public class Tekoki extends MeaProvider {
 		this.tournamentManager = new TournamentHandler();
 		this.ffaHandler = new FFAHandler();
 		/*this.getServer().getMessenger().registerOutgoingPluginChannel(this, "Lunar-Client");
-		this.getServer().getMessenger().registerIncomingPluginChannel(this, "Lunar-Client", this);*/ //LunarApi only work on 1.8
+		this.getServer().getMessenger().registerIncomingPluginChannel(this, "Lunar-Client", this);*/
 	}
 	
 	@Override

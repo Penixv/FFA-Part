@@ -45,7 +45,7 @@ public class FFAHandler {
     private List<Entity> drops;
 
     public FFAHandler() {
-        this.ffaPlayers = new ConcurrentSet<FFAPlayer>();
+        this.ffaPlayers = new ConcurrentSet<FFAPlayer>(); //线程安全类，边遍历边删增没问题
         this.spawn = new Location(Bukkit.getWorlds().get(0), 0 ,0 ,0);
         this.spawnProt1 = new Location(Bukkit.getWorlds().get(0), 0 ,0 ,0);
         this.spawnProt2 = new Location(Bukkit.getWorlds().get(0), 0 ,0 ,0);
@@ -90,6 +90,10 @@ public class FFAHandler {
         return player1Loc.getX() <= maxX && player1Loc.getX() >= minX && player1Loc.getZ() <= maxZ && player1Loc.getZ() >= minZ && player1Loc.getY() <= maxY && player1Loc.getY() >= minY;
     }
 
+    public FFAKit getKit(FFAPlayer ffaPlayer) {
+        return this.getKitMap().get(ffaPlayer);
+    }
+
     public boolean isInSpawn(FFAPlayer player1, FFAPlayer player2) {
         Location player1Loc = player1.toPlayer().getLocation();
         Location player2Loc = player2.toPlayer().getLocation();
@@ -101,6 +105,9 @@ public class FFAHandler {
     public void handleRespawn(FFAPlayer ffaplayer, FFAKit ffaKit) {
         if (ffaplayer.toPlayer() == null) {
             return;
+        }
+        if (this.kitMap.get(ffaplayer) != null) {
+            this.kitMap.remove(ffaplayer);
         }
         this.kitMap.put(ffaplayer, ffaKit);
         ffaKit.applyKit(ffaplayer.toPlayer());
