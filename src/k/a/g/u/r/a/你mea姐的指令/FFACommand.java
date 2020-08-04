@@ -1,13 +1,13 @@
-package k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî;
+package k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤;
 
 import c.aqua.neeeeee.utils.Color;
 import c.aqua.neeeeee.utils.LocationUtil;
 import k.a.g.u.r.a.Tekoki;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAKit;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAKitType;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAPlayer;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Ìì¹·.SkyDog;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAKit;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAKitType;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAPlayer;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.å¤©ç‹—.SkyDog;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -130,7 +130,7 @@ public class FFACommand implements CommandExecutor {
 
     private String[] USAGE = new String[]{
             Color.GRAY + Color.STRIKE_THROUGH + "---------------------------------------------",
-            Color.GREEN + "Tournament Help",
+            Color.GREEN + "FFA Help",
             Color.WHITE + "/ffa leave" + Color.GRAY + " Leave current FFA game",
             Color.GRAY + Color.STRIKE_THROUGH + "---------------------------------------------",
     };
@@ -246,5 +246,5 @@ public class FFACommand implements CommandExecutor {
 
 
 
-    //ÕæµÄ²»Ïë²ÎÓëÕâÆÆÈ¦×ÓÀïµÄÊÂ
+    //çœŸçš„ä¸æƒ³å‚ä¸è¿™ç ´åœˆå­é‡Œçš„äº‹
 }
