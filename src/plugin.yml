@@ -1,0 +1,56 @@
+version: 1.5
+name: Mea
+author: [joeleoli, twtter] #xD
+main: k.a.g.u.r.a.Tekoki
+depend: [Aqua-Practice]
+description: 'Practice core for MineX Network'
+
+commands:
+   spawn:
+     description: FFA spawn.
+   ffa:
+     description: Manage FFA.
+   day:
+   night:
+   settings:
+   sunset:
+   duel:
+     description: Send a duel request.
+   ladder:
+     description: Command for managing ladders.
+   arena:
+     description: Command for managing arenas.
+   viewinv:
+     aliases: [vinv]
+     description: Command for viewing inventories.
+   accept:
+     aliases: [a]
+     description: Command for accepting duel.
+   party:
+     aliases: [p]
+     description: Command for managing party.
+   spec:
+     aliases: [spectate]
+     description: Command for spectating.
+   stopspec:
+     aliases: [stopspectate]
+     description: Command for stopping spectating.
+   event:
+     description: Command for event.
+   eventmanage:
+     aliases: [em]
+     description: Command for eventmanaging.
+   tournament:
+     aliases: [tm]
+     description: Command for hosting tournament.
+   practice:
+     aliases: [prac]
+     description: Main command.
+   sprac:
+     description: Jok.
+   #lunarclient:
+     #aliases: [lc,lclient]
+     #description: Command for checking client.
+   #emote:
+     #description: Command for emote.
+     
