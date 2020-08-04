@@ -369,8 +369,7 @@ public class PlayerListener implements Listener{
                     if (event.getCurrentItem().getType().toString().contains("_BOOTS")
                             || event.getCurrentItem().getType().toString().contains("_CHESTPLATE")
                             || event.getCurrentItem().getType().toString().contains("_HELMET")
-                            || event.getCurrentItem().getType().toString().contains("_LEGGINGS")
-                            || event.getCurrentItem().getType().toString().contains("_SWORD")) {
+                            || event.getCurrentItem().getType().toString().contains("_LEGGINGS")) {
                         event.setCancelled(true);
                     }
                 }
@@ -792,6 +791,14 @@ public class PlayerListener implements Listener{
             event.setCancelled(true);
         } else if (skyDog.isInFFA()) {
             if (!Tekoki.tekoki().getFfaHandler().hasSelectedKit(ffaPlayer)) {
+                event.setCancelled(true);
+                return;
+            }
+            if (event.getItem().getType().toString().contains("_BOOTS")
+                    || event.getItem().getType().toString().contains("_CHESTPLATE")
+                    || event.getItem().getType().toString().contains("_HELMET")
+                    || event.getItem().getType().toString().contains("_LEGGINGS")
+                    || event.getItem().getType().toString().contains("_SWORD") ) {
                 event.setCancelled(true);
             }
         }
