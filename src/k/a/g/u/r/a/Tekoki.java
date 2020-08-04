@@ -21,25 +21,25 @@ import k.a.g.u.r.a.tekokitools.knockback.iSpigotHandler;
 import k.a.g.u.r.a.tekokitools.languages.CHS;
 import k.a.g.u.r.a.tekokitools.languages.ENG;
 import k.a.g.u.r.a.tekokitools.tasks.*;
-import k.a.g.u.r.a.Äãmea½ãµÄÄýÊÓ.*;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.*;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.duel.AcceptCommand;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.duel.DuelCommand;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.management.ArenaCommand;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.management.EventManageCommand;
-import k.a.g.u.r.a.Äãmea½ãµÄÖ¸Áî.management.LadderCommand;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Arena.ArenaHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Board.PracticeBoardAdapter;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Event.EventHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.FFA.FFAKitType;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Kits.Ladder;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Kits.LadderHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Match.queue.Queue;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Match.queue.QueueThread;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.MeaMongo;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.tournament.TournamentHandler;
-import k.a.g.u.r.a.Äãmea½ãµÄØ”²¼.Ìì¹·.SkyDog;
+import k.a.g.u.r.a.ä½ meaå§çš„å‡è§†.*;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.*;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.duel.AcceptCommand;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.duel.DuelCommand;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.management.ArenaCommand;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.management.EventManageCommand;
+import k.a.g.u.r.a.ä½ meaå§çš„æŒ‡ä»¤.management.LadderCommand;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Arena.ArenaHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Board.PracticeBoardAdapter;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Event.EventHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.FFA.FFAKitType;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Kits.Ladder;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Kits.LadderHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Match.queue.Queue;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.Match.queue.QueueThread;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.MeaMongo;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.tournament.TournamentHandler;
+import k.a.g.u.r.a.ä½ meaå§çš„è²¡å¸ƒ.å¤©ç‹—.SkyDog;
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Bukkit;
@@ -105,7 +105,7 @@ public class Tekoki extends MeaProvider {
 			getConfig().options().copyDefaults();
 		}
 		if (Bukkit.getPluginManager().getPlugin("Aqua-Practice") != null) {
-			Bukkit.getConsoleSender().sendMessage(Color.AQUA + "MeAquaÌùÌù!");
+			Bukkit.getConsoleSender().sendMessage(Color.AQUA + "MeAquaè´´è´´!");
 			//this.lunarClientHandler = new LunarClientHandler();
 			this.setupConfigs();
 			this.setupDataBase();
@@ -115,10 +115,10 @@ public class Tekoki extends MeaProvider {
 			this.registerRunnables();
 			this.registerSettings();
 			this.registerKnockback();
-			//this.registerLanguages();
+			this.registerLanguages();
 			this.registerTags();
 		} else {
-			Bukkit.getConsoleSender().sendMessage("Aqua ÕÒ²»µ½ÁË!");
+			Bukkit.getConsoleSender().sendMessage("Aqua æ‰¾ä¸åˆ°äº†!");
 			Bukkit.getPluginManager().disablePlugin(this);
 			onDisable();
 		}
@@ -194,11 +194,6 @@ public class Tekoki extends MeaProvider {
 		Bukkit.getServer().getPluginManager().registerEvents(new ProjectileListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new WorldListener(), this);
 		Bukkit.getServer().getPluginManager().registerEvents(new MatchListener(), this);
-		/*Bukkit.getServer().getPluginManager().registerEvents(new LunarListener(this.lunarClientHandler), this);
-		Bukkit.getServer().getPluginManager().registerEvents(new ClientListener(), this);
-		Bukkit.getServer().getPluginManager().registerEvents(new BorderListener(), this);
-		Bukkit.getServer().getPluginManager().registerEvents(new HologramListener(), this);
-		Bukkit.getServer().getPluginManager().registerEvents(new WaypointListener(), this);*/
 	}
 	
 	private void registerRunnables() {
@@ -215,14 +210,14 @@ public class Tekoki extends MeaProvider {
 		this.getServer().getScheduler().runTaskTimer(this, new PearlTask(), 2L, 2L);
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new SaveDataTask(), 6000L, 6000L);
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, this, 0L, 10L);
-		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new TimePacketTask(),200l,200l);
+		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new TimePacketTask(),200l, 200l);
 		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new BroadCastTask(), 0l, 2400l);
-		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new SnapShotsRemoveTask(), 2l,1200l);
+		this.getServer().getScheduler().runTaskTimerAsynchronously(this, new SnapShotsRemoveTask(), 2l, 1200l);
 		Bukkit.getServer().getScheduler().runTaskLater(this, () ->{
 			this.isloaded = true;
 		}, 80L);
 		this.statisticsCounter = new StatisticsCounter();
-		Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(this,new StatisticsUpdater(), 2000L,4800L);
+		Bukkit.getServer().getScheduler().runTaskTimerAsynchronously(this,new StatisticsUpdater(), 2000L, 4800L);
 		lastTournamentHostTime = System.currentTimeMillis();
 	}
 
@@ -243,8 +238,6 @@ public class Tekoki extends MeaProvider {
 		(this.eventManager = new EventHandler()).init();
 		this.tournamentManager = new TournamentHandler();
 		this.ffaHandler = new FFAHandler();
-		/*this.getServer().getMessenger().registerOutgoingPluginChannel(this, "Lunar-Client");
-		this.getServer().getMessenger().registerIncomingPluginChannel(this, "Lunar-Client", this);*/ //LunarApi only work on 1.8
 	}
 	
 	@Override
